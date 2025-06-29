@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sana bir soru ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #ffd6e8, #ffe6f0);
+      font-family: 'Segoe UI', sans-serif;
+      color: #b30059;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      width: 400px;
+    }
+
+    h1, h2, p {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .yes-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .no-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .heart {
+      font-size: 36px;
+      animation: pulse 1.5s infinite;
+      margin: 20px 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- 1. Soru -->
+    <div id="step1">
+      <h1>Sana bir soru sorabilir miyim? ✉️❤️</h1>
+      <button class="yes-btn" onclick="goToStep2()">❤️ Evet</button>
+      <button class="no-btn" onclick="alert('Ama çok önemli bir şeydi 😢')">Hayır ❌</button>
+    </div>
+
+    <!-- 2. Soru -->
+    <div id="step2" class="hidden">
+      <h2>Benimle çıkar mısın, sonsuza diye? 💞</h2>
+      <button class="yes-btn" onclick="showPoem()">💘 Evet</button>
+      <button class="no-btn" onclick="alert('Üzdün beni ama yine de seni seviyorum... 😔')">Hayır ❌</button>
+    </div>
+
+    <!-- Şiirli Kutlama -->
+    <div id="poemBox" class="hidden">
+      <div class="heart">💖💖💖</div>
+      <h2>Sen 'Evet' dedin! 😍</h2>
+      <p>
+        Seninle geçen her an, bir şiir gibi,<br>
+        Gözlerin yıldız, gülüşün melodi ✨<br>
+        Kalbim seninle atıyor, her saniye,<br>
+        Artık ikimiz biriz, sonsuza diye 💍
+      </p>
+      <div class="heart">💖💖💖</div>
+    </div>
+  </div>
+
+  <script>
+    function goToStep2() {
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.remove('hidden');
+    }
+
+    function showPoem() {
+      document.getElementById('step2').classList.add('hidden');
+      document.getElementById('poemBox').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
